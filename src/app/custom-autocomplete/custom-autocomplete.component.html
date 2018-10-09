@@ -1,0 +1,26 @@
+<div>
+  <form class="form">
+    <mat-form-field>
+  
+      <input type="text" placeholder="Search" aria-label="Number" [(ngModel)]="value" name="search" required
+         matInput [matAutocomplete]="auto" (keyup)="search(value)">
+  
+      <mat-progress-bar mode="indeterminate" *ngIf="loading" [color]="loaderColor"></mat-progress-bar>
+  
+      <mat-autocomplete #auto="matAutocomplete"
+        (closed)="hideLoader($event)"
+        (opened)="showLoader($event)"
+        [displayWith]="displayWith"
+        (optionSelected)="selected($event)">
+  
+        <mat-option *ngFor="let option of data" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+  
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+</div>
