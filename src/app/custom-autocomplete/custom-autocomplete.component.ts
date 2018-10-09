@@ -16,9 +16,9 @@ export class CustomAutocompleteComponent implements OnInit {
 
   @Output() optionSelected = new EventEmitter<any>();
 
-  private data: any[];
+  data: any[];
 
-  private initialData: any[];
+  initialData: any[];
 
   value: string;
 

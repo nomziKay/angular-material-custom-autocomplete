@@ -1,16 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { SuppliersComponent } from './suppliers/suppliers.component';
-import { AppMaterialModule } from './app-material/app-material.module';
-import { AppModule } from './app.module';
-import { CustomAutocompleteModule } from './custom-autocomplete/custom-autocomplete.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { CustomAutocompleteModule } from './custom-autocomplete/custom-autocomplete.module';
+import { AppMaterialModule } from './app-material/app-material.module';
+import { AppComponent } from './app.component';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        SuppliersComponent
+        AppComponent
       ],
       imports: [
         CustomAutocompleteModule,

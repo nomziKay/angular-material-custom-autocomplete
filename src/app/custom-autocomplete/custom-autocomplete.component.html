@@ -8,10 +8,10 @@
       <mat-progress-bar mode="indeterminate" *ngIf="loading" [color]="loaderColor"></mat-progress-bar>
   
       <mat-autocomplete #auto="matAutocomplete"
-        (closed)="hideLoader($event)"
-        (opened)="showLoader($event)"
+        (closed)="hideLoader()"
+        (opened)="showLoader()"
         [displayWith]="displayWith"
-        (optionSelected)="selected($event)">
+        (optionSelected)="selected()">
   
         <mat-option *ngFor="let option of data" [value]="option">
           {{option.name}}
